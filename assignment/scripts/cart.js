@@ -12,13 +12,13 @@ function addItem(item) {
         basket.push(item);
         return true;
     } else { 
-        return false
+        return false;
     }
 }
 
-//listItems(basket) loops over the basket array and logs each item
+//listItems() loops over the basket array and logs each item
 function listItems() {
-    for (item of basket) {
+    for (let item of basket) {
         console.log(item);
     }
 }
@@ -35,7 +35,7 @@ function isFull() {
 
 //removeItem(item String) returns the same string as the input parameter at it's first found index if it is within the array, otherwise returns null
 function removeItem(item) {
-    return (basket.indexOf(item) > 0) ? basket.splice(basket.indexOf(item), 1)[0] : null;
+    return (basket.indexOf(item) >= 0) ? basket.splice(basket.indexOf(item), 1)[0] : null;
 }
 
 //-----------TESTS------------//
@@ -60,3 +60,4 @@ console.log('Checking isFull with five items ---> true', isFull());
 console.log('Removing corn item from basket --> corn', removeItem('corn'));
 console.log('Listing basket after removal -->', listItems());
 console.log('Attempting to remove an item not in basket --> null', removeItem('gravy'));
+
